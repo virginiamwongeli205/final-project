@@ -1,0 +1,33 @@
+ @import "tailwindcss";
+
+@theme {
+  /* Roast Haven Color Palette */
+  --color-primary: #6F4E37;      /* Coffee Brown */
+  --color-secondary: #DAB49D;    /* Latte Beige */
+  --color-accent: #C97B2C;       /* Amber Roast */
+  --color-neutral-dark: #2E2E2E; /* Text */
+  --color-neutral-light: #F8F5F2;/* Background */
+
+  /* Font Families */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-[var(--font-body)] bg-[var(--color-neutral-light)] text-[var(--color-neutral-dark)];
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-[var(--font-heading)];
+  }
+}
+
+/* Buttons */
+@utility button-primary {
+  @apply bg-[var(--color-primary)] text-white px-6 py-3 rounded-full font-semibold hover:bg-[var(--color-accent)] transition;
+}
+
+@utility button-outline {
+  @apply border border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-full hover:bg-[var(--color-primary)] hover:text-white transition;
+}
